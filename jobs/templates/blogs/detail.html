@@ -17,7 +17,7 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{% url 'home' %}">Rachit Garg</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Rachit Garg</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,41 +25,21 @@
               <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="https://www.linkedin.com/in/rrachit-garg/">LinkedIn</a>
                 <a class="nav-item nav-link" href="{% static 'Rachit_Resume.pdf' %}">Resume</a>
-                <a class="nav-item nav-link" href="{% url 'blog_page' %}">Blog</a>
+                <a class="nav-item nav-link active" href="#">Blog</a>
               </div>
             </div>
           </nav>
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1>Hi, I'm Rachit</h1>
-      <p class="lead text-muted">Currently a software developer intern in grofers trying to be a full-time employee.</p>
-      <p>
-        <a href="mailto:rachitg747@gmail.com" class="btn btn-primary my-2">Email Me</a>
-      </p>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ job.image_file.url }}"/>
-            <div class="card-body">
-              <p class="card-text">
-                {{job.summary}}
-              </p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-        </div>
-
+<div class="container">
+    <h1 class="text-center pt-3">{{blog.title}}</h1>
+    <div class="text-center">{{blog.pub_date_pretty}}</div>
+    <img class="img-fluid" src={{blog.image.url}}/><br/>
+        <p>{{blog.body}}</p>
+      </div>
+</div>
+</div>
 </main>
 
 <footer class="text-muted">
